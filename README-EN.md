@@ -12,6 +12,7 @@
       * [2. Add MoPub SDK and Atmosplay Ads SDK as below](#2-add-mopub-sdk-and-atmosplay-ads-sdk-as-below)
          * [2.1 Add android project dependency](#21-add-android-project-dependency)
          * [2.2 Add MoPub-used components in Manifest file](#22-add-mopub-used-components-in-manifest-file)
+         * [2.3 Add permission into AndroidManifest](#23-add-permission-into-androidmanifest)
       * [3. Add the following files into project](#3-add-the-following-files-into-project)
       * [4. Set up ad unit for Atmosplay Ads on <a href="https://app.mopub.com/apps" rel="nofollow">MoPub</a>](#4-set-up-ad-unit-for-atmosplay-ads-on-mopub)
          * [4.1 Create new adunit for Atmosplay Ads](#41-create-new-adunit-for-atmosplay-ads)
@@ -97,6 +98,12 @@ dependencies {
 </application>
 ```
 
+### 2.3 Add permission into AndroidManifest
+```xml
+<!-- Required for China-Mainland Traffic app -->
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+```
+
 ## 3. Add the following files into project
 1. Banner adapter: [AtmosplayAdsBanner.java](./mopubadapter/src/main/java/com/atmosplayads/mopubadapter/AtmosplayAdsBanner.java)
 
@@ -104,7 +111,7 @@ dependencies {
 
 3. Interstitial adapter: [AtmosplayAdsInterstitial.java](./mopubadapter/src/main/java/com/atmosplayads/mopubadapter/AtmosplayAdsInterstitial.java)
 
-4. Util Class(which contains some common methods, such as parsing the json issued by Mopub, or converting the error code)：[AtmosplayAdsUtils.java](./admobadapter/src/main/java/com/atmosplayads/admobadapter/AtmosplayAdsUtils.java)
+4. Util Class(which contains some common methods, such as parsing the json issued by Mopub, or converting the error code)：[AtmosplayAdsUtils.java](./mopubadapter/src/main/java/com/atmosplayads/mopubadapter/AtmosplayAdsUtils.java)
 
 
 Please ensure no errors after classes imported. Then record the path of package, e.g (com.atmosplayads.mopubadapter.AtmosplayAdsRewardedVideo) which is used to configure AtmosplayAds on MoPub.

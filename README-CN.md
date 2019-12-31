@@ -12,6 +12,7 @@
       * [2. 添加MoPub SDK和Atmosplay Ads SDK，步骤如下：](#2-添加mopub-sdk和atmosplay-ads-sdk步骤如下)
          * [2.1 添加Android工程依赖](#21-添加android工程依赖)
          * [2.2 在Manifest文件下添加MoPub使用到的组件](#22-在manifest文件下添加mopub使用到的组件)
+         * [2.3 在Manifest文件下添加下面的权限](#23-在Manifest文件下添加下面的权限)
       * [3. 添加适配器文件](#3-添加适配器文件)
       * [4. 在<a href="https://app.mopub.com/apps" rel="nofollow">MoPub平台</a>为可玩广告配置广告位](#4-在mopub平台为可玩广告配置广告位)
          * [4.1 为可玩广告新建广告位](#41-为可玩广告新建广告位)
@@ -95,6 +96,12 @@ dependencies {
         android:name="com.mopub.mobileads.RewardedMraidActivity"
         android:configChanges="keyboardHidden|orientation|screenSize" />
 </application>
+```
+
+### 2.3 在Manifest文件下添加下面的权限
+```xml
+<!-- 国内渠道必须添加，GooglePlay可以不添加 -->
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
 
 ## 3. 添加适配器文件
